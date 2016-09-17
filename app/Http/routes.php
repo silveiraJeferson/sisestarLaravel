@@ -10,7 +10,22 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//
+//Route::get('/', function () {
+//    return view('layouts.index');
+//});
+Route::controller('/notificacao','NotificacaoController');
+Route::controller('/regularizacao', 'RegularizacaoController');
+Route::controller('/gestao', 'GestaoController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+
+
+
+
+Route::controller('/', 'PainelController');
+
+

@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/09/2016, 21:13:35
+    Author     : jeferson
+*/
+
+body{
+    background-image: url("UntitledDiagram.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: -100%;
+    
+}
+
+
+#superior-bar{
+    padding: 15px;
+    background-color: #004C99;
+    color: white;
+    display: block;
+}
+#sisestarTituloSite{
+    font-size: 22px;
+}
+
+#btnSuperiorBar{
+  padding: 5px;
+    
+}
+#btnLogin{
+    float: right;
+}
