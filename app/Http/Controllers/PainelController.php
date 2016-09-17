@@ -24,10 +24,7 @@ class PainelController extends Controller
         return view('public.login');
     }
     
-    public function getMenu(){
-        return view('public.menu_dropdown_notificacoes');
-    }
-
+    
     
     /**
      * Show the form for creating a new resource.

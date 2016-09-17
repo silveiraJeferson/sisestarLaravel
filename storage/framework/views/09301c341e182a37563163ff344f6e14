@@ -21,51 +21,90 @@
     <body>
         <div class="container">
             <div id="superior-bar" class="blueSisestar">
-                <span id="sisestarTituloSite">SisEstaR</span>
+                <a href="<?php echo e(url('/')); ?>"><span id="sisestarTituloSite">SisEstaR</span></a>
+                <!----------------------------------------------------------------------botão notificação----------------------------------->
 
-                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs">
+                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Notificações <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        ...
+                        <li><a href="<?php echo e(url('/notificacao/data')); ?>">Listar Notificações por Data</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/agente')); ?>">Listar Notificações por Agente</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Listar Notificações por Placa</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Listar Notificações por Código</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/setor')); ?>">Listar Notificações por Setor</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/local')); ?>">Listar Notificações por Local</a></li>
                     </ul>
                 </button>
-
-                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo e(url('/menu')); ?>" role="button" aria-haspopup="true" aria-expanded="false">
+                <!----------------------------------------------------------------------botão regularização----------------------------------->
+                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Regularização <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            oi
-                        </li>    
+                        <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Buscar por Placa</a></li>
+                        <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Buscar por Código</a></li>
+
                     </ul>
-
                 </button>
-                <button id="btnLogin" class="btn btn-default">
-                    Login
-                </button>
+                <!----------------------------------------------------------------------botões para gestão de funcionários----------------------------------->
 
+                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Gestão Funcionários <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo e(url('/gestao/funcionarios')); ?>">Listar Funcionários</a></li>
+                        <li><a href="<?php echo e(url('/gestao/buscar')); ?>">Buscar Funcionários</a></li>
+                        <li><a href="<?php echo e(url('/gestao/cadastrar')); ?>">Adicionar Funcionários</a></li>                   
+                    </ul>
+                </button>             
+
+
+
+
+                <button id="btnLogin" class="btn btn-default btnSuperiorBar">
+                    <a href="<?php echo e(url('/login')); ?>">Login</a>
+                </button>
 
             </div>
-            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block">
+
+            <!----------------------------------------------------------------------botões para dispositivos pequenos----------------------------------->
+
+            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    ...
+                    <li><a href="<?php echo e(url('/notificacao/data')); ?>">Listar Notificações por Data</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/agente')); ?>">Listar Notificações por Agente</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Listar Notificações por Placa</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Listar Notificações por Código</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/setor')); ?>">Listar Notificações por Setor</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/local')); ?>">Listar Notificações por Local</a></li>
                 </ul>
             </button>
 
-            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block">
+            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    ...
+                    <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Buscar por Placa</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Buscar por Código</a></li>
                 </ul>
             </button>
+            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Gestão Funcionários <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo e(url('/gestao/funcionarios')); ?>">Listar Funcionários</a></li>
+                    <li><a href="<?php echo e(url('/gestao/buscar')); ?>">Buscar Funcionários</a></li>
+                    <li><a href="<?php echo e(url('/gestao/cadastrar')); ?>">Adicionar Funcionários</a></li>                   
+                </ul>
+            </button> 
 
 
 

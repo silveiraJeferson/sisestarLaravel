@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserTableSeeder::class);
 
         Model::reguard();
+        $this->call('FuncionariosSeeder');
     }
 }

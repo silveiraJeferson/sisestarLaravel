@@ -28,6 +28,10 @@ class GestaoController extends Controller
     {
         return view('gestao.buscar_funcionario');
     }
+    public function getCadastrar()
+    {
+        return view('gestao.buscar_funcionario');
+    }
     
     
     

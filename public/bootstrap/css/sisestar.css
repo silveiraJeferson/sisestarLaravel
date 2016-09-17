@@ -23,14 +23,26 @@ body{
     color: white;
     display: block;
 }
+#sisestarTituloSite {
+    text-decoration: none;
+    color: white;
+}
+
+
+
 #sisestarTituloSite{
     font-size: 22px;
 }
 
 #btnSuperiorBar{
   padding: 5px;
-    
+  color: black;   
 }
+.btnSuperiorBar a{
+    text-decoration: none;
+}
+
+
 #btnLogin{
     float: right;
 }
