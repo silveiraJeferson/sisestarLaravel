@@ -1,4 +1,49 @@
 <?php $__env->startSection('content'); ?>
-    <p>Listagem de funcionarios</p>
+<table class="table table-responsive table-striped">
+    <h1>Funcionarios</h1>
+    <tr>
+        Listagem dos funcionarios
+    </tr>
+    <tr>
+        <th>#</th>
+        <th>Sobrenome</th>
+        <th>Nome</th>
+        <th>Matrícula</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+    </tr>
+     <?php foreach($funcionarios as $funcionario): ?>
+    <tr>
+        <th><img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" /></th>
+        <th><?php echo e($funcionario->sobrenome); ?></th>
+        <th><?php echo e($funcionario->nome); ?></th>
+        <th><?php echo e($funcionario->matricula); ?></th>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+
+<?php echo $funcionarios->render();?>
 <?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <?php foreach($funcionarios as $funcionario): ?>
+    <img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" />
+    <?php echo e($funcionario->nome); ?><br/>
+    <?php endforeach; ?>-->
 <?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

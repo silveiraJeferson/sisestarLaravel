@@ -19,9 +19,12 @@ Route::controller('/regularizacao', 'RegularizacaoController');
 Route::controller('/gestao', 'GestaoController');
 
 
+//Route::controller('/imagem','ImagemController');
 
-
-
+Route::get('imagem/arquivo/{nome}', [
+    'as' => 'imagem.file',
+    'uses' => 'ImagemController@getImagemFile'
+]);
 
 
 

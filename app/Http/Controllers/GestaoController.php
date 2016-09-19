@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use sisestar\Http\Requests;
 use sisestar\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class GestaoController extends Controller
 {
@@ -21,7 +22,8 @@ class GestaoController extends Controller
     
     public function getFuncionarios()
     {
-        return view('gestao.lista_funcionarios');
+        $funcionarios = DB::table('funcionarios')->orderBy('sobrenome')->paginate(7);
+        return view('gestao.lista_funcionarios',  compact('funcionarios'));
     }
     
     public function getBuscar()

@@ -17,6 +17,7 @@ class CreateFuncionariosTable extends Migration
            $table->string('nome', 50);
            $table->string('sobrenome', 50);
            $table->string('cpf', 11);
+           $table->string('foto', 50);           
            $table->string('matricula', 20);
            $table->date('data_nasc');           
            $table->timestamps();
