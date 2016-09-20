@@ -11,9 +11,8 @@ and open the template in the editor.
 body{
     background-image: url("UntitledDiagram.png");
     background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: -100%;
-    
+   background-position: center;
+   
 }
 
 
@@ -46,3 +45,16 @@ body{
 #btnLogin{
     float: right;
 }
+
+#filtroBusca{
+    margin-top: 20%;
+    width: 300px;
+}
+#pIdLogin{
+    padding: 5px;
+}
+#formLogin{
+    width: 250px;
+    margin-top: 15%;
+}
+

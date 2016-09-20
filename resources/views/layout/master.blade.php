@@ -25,7 +25,7 @@
                 <!----------------------------------------------------------------------botão notificação----------------------------------->
 
                 <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                         Notificações <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -39,7 +39,7 @@
                 </button>
                 <!----------------------------------------------------------------------botão regularização----------------------------------->
                 <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                         Regularização <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -51,7 +51,7 @@
                 <!----------------------------------------------------------------------botões para gestão de funcionários----------------------------------->
 
                 <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                         Gestão Funcionários <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
@@ -73,7 +73,7 @@
             <!----------------------------------------------------------------------botões para dispositivos pequenos----------------------------------->
 
             <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -87,7 +87,7 @@
             </button>
 
             <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -96,7 +96,7 @@
                 </ul>
             </button>
             <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Gestão Funcionários <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">

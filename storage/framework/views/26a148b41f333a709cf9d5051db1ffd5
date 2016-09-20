@@ -1,0 +1,9 @@
+<?php $__env->startSection('content'); ?>
+<?php foreach($consulta as $funcionario): ?>
+<img id="imgPerfil"class="thumb thumbnail"src="<?php echo e(url('/imagem/arquivo/'.$funcionario->foto)); ?>"/>
+<div id="matriculaPerfil" class="text-center"><?php echo e($funcionario->matricula); ?></div>
+<h1><?php echo e($funcionario->sobrenome); ?></h1>
+<h2><?php echo e($funcionario->nome); ?></h2>
+<?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

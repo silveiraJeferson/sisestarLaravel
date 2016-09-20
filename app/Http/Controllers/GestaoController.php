@@ -25,6 +25,15 @@ class GestaoController extends Controller
         $funcionarios = DB::table('funcionarios')->orderBy('sobrenome')->paginate(7);
         return view('gestao.lista_funcionarios',  compact('funcionarios'));
     }
+    public function getFuncionarioInfo($id){
+        $consulta = DB::table('funcionarios')->where('id',$id)->get();
+        
+        
+        return view('gestao.info_funcionario',compact('consulta'));
+    }
+    
+    
+    
     
     public function getBuscar()
     {

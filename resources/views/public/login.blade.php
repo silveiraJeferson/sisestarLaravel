@@ -1,5 +1,21 @@
 @extends('layout.master')
 @section('content')
-    <p>This is my body content.</p>
-    <img class="thumb" src="{{url('imagem/arquivo/singapura.jpg')}}" alt="" />
+
+<div id="formLogin"class="thumbnail center-block">
+    <h4 class="text-center">Login</h4>
+    <p id="pIdLogin"class="bg-danger text-danger text-center">Informe login e senha</p>
+    <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-user"></div>
+        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+    </div>           
+    <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-asterisk"></div>
+        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-success center-block">Login</button>
+
+
+</div>
+
 @endsection

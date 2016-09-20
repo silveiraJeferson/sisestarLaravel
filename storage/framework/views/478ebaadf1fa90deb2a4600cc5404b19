@@ -9,20 +9,22 @@
         <th>Sobrenome</th>
         <th>Nome</th>
         <th>Matrícula</th>
+        <th></th>
     </tr>
     <tr>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        
+        <td></td>
     </tr>
      <?php foreach($funcionarios as $funcionario): ?>
     <tr>
-        <th><img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" /></th>
-        <th><?php echo e($funcionario->sobrenome); ?></th>
-        <th><?php echo e($funcionario->nome); ?></th>
-        <th><?php echo e($funcionario->matricula); ?></th>
+        <td><img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" /></td>
+        <td><?php echo e($funcionario->sobrenome); ?></td>
+        <td><?php echo e($funcionario->nome); ?></td>
+        <td><?php echo e($funcionario->matricula); ?></td>
+        <td><button class="btn btn-success"><a href="/gestao/funcionario-info/<?php echo e($funcionario->id); ?>">Ver</a></button></td>
     </tr>
     <?php endforeach; ?>
 </table>

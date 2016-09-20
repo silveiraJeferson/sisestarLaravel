@@ -1,4 +1,16 @@
 <?php $__env->startSection('content'); ?>
-    <p>Listagem de notificações por local</p>
+<p class="text-center h1">Buscar por Local</p>
+<p class="bg-success">Digite o Local...</p>
+
+
+
+<form>
+    <input type="text" class="form-control center-block" id="filtroBusca" placeholder="Local..." aria-describedby="inputSuccess4Status">
+    
+    <br/>
+    <button type="submit" class="btn btn-success center-block">Buscar</button>
+</form>
+
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,4 +1,15 @@
 <?php $__env->startSection('content'); ?>
-    <p>Buscar funcionario</p>
+<p class="text-center h1">Pesquisar Agente</p>
+<p class="bg-success">Digite a matricula ou nome do agente...</p>
+
+
+
+<form>
+    <input type="text" class="form-control center-block" id="filtroBusca" placeholder="Matrícula ou Nome..." aria-describedby="inputSuccess4Status">
+
+    <br/>
+    <button type="submit" class="btn btn-success center-block">Buscar</button>
+</form>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
