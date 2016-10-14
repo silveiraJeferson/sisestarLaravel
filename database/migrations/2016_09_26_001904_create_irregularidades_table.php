@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCargosTable extends Migration
+class CreateIrregularidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateCargosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cargos', function($table){
-            $table->increments('id');            
-            $table->string('nome', 20);
+        Schema::create('irregularidades', function($table) {
+            $table->increments('id');
+            $table->integer('codigo');  
+            $table->string('nome'); 
             $table->timestamps();
-            
         });
     }
 
@@ -25,8 +25,7 @@ class CreateCargosTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::drop('cargos');
+    public function down() {
+        Schema::drop('irregularidades');
     }
 }

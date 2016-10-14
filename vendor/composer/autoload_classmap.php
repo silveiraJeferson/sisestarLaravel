@@ -6,10 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateCargosTable' => $baseDir . '/database/migrations/2016_09_17_185711_create_cargos_table.php',
+    'CargosSeeder' => $baseDir . '/database/seeds/CargosSeeder.php',
+    'CreateCargosTable' => $baseDir . '/database/migrations/2016_09_26_005500_create_cargos_table.php',
     'CreateFuncionariosTable' => $baseDir . '/database/migrations/2016_09_17_184022_create_funcionarios_table.php',
+    'CreateIrregularidadesTable' => $baseDir . '/database/migrations/2016_09_26_001904_create_irregularidades_table.php',
     'CreateLoginsTable' => $baseDir . '/database/migrations/2016_09_17_185809_create_logins_table.php',
+    'CreateNotificacaosTable' => $baseDir . '/database/migrations/2016_09_20_171616_create_notificacaos_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateStatusNotificacaosTable' => $baseDir . '/database/migrations/2016_10_09_225040_create_status_notificacaos_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -85,6 +89,8 @@ return array(
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+    'IrregularidadesSeeder' => $baseDir . '/database/seeds/IrregularidadesSeeder.php',
+    'NotificacaoSeeder' => $baseDir . '/database/seeds/NotificacaoSeeder.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -517,6 +523,7 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
+    'Status_notificacaosSeeder' => $baseDir . '/database/seeds/Status_notificacaosSeeder.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
 );

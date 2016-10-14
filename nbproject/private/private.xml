@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/sisestarLaravel/app/Http/routes.php</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/notificacao/lista_por_data.blade.php</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/notificacao/index.blade.php</file>
-            <file>file:/var/www/html/sisestarLaravel/public/bootstrap/css/sisestar.css</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/notificacao/lista_por_agente.blade.php</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/layout/master.blade.php</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/gestao/info_funcionario.blade.php</file>
-            <file>file:/var/www/html/sisestarLaravel/app/Http/Controllers/GestaoController.php</file>
-            <file>file:/var/www/html/sisestarLaravel/resources/views/gestao/lista_funcionarios.blade.php</file>
+            <file>file:/var/www/html/sisestarLaravel/resources/views/notificacao/notificar.blade.php</file>
+            <file>file:/var/www/html/sisestarLaravel/resources/views/notificacao/ver_notificacao.blade.php</file>
+            <file>file:/var/www/html/sisestarLaravel/app/Http/Controllers/NotificacaoController.php</file>
+            <file>file:/var/www/html/sisestarLaravel/resources/views/layout/movel.blade.php</file>
         </group>
     </open-files>
 </project-private>

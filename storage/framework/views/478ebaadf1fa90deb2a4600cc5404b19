@@ -1,36 +1,46 @@
 <?php $__env->startSection('content'); ?>
 <table class="table table-responsive table-striped">
-    <h1>Funcionarios</h1>
+    <h1>Listagem dos funcionarios</h1>
     <tr>
-        Listagem dos funcionarios
-    </tr>
-    <tr>
-        <th>#</th>
-        <th>Sobrenome</th>
-        <th>Nome</th>
-        <th>Matrícula</th>
-        <th></th>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-     <?php foreach($funcionarios as $funcionario): ?>
-    <tr>
-        <td><img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" /></td>
-        <td><?php echo e($funcionario->sobrenome); ?></td>
-        <td><?php echo e($funcionario->nome); ?></td>
-        <td><?php echo e($funcionario->matricula); ?></td>
-        <td><button class="btn btn-success"><a href="/gestao/funcionario-info/<?php echo e($funcionario->id); ?>">Ver</a></button></td>
-    </tr>
-    <?php endforeach; ?>
+
+    <p>
+        <?php echo Form::open(['url' => '/gestao/funcionarios']); ?>
+
+        <?php echo Form::text('param','',array('placeholder' => 'Pesquisar Funcionário')); ?>
+
+        <?php echo Form::submit('Buscar',array('class' => 'btn-primary')); ?>
+
+        <?php echo Form::close(); ?>
+
+    </p>
+</tr>
+<tr>
+    <th>#</th>
+    <th>Sobrenome</th>
+    <th>Nome</th>
+    <th>Matrícula</th>
+    <th></th>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<?php foreach($funcionarios as $funcionario): ?>
+<tr>
+    <td><img class="img-circle" style="width: 30px; height: 30px;"src="<?php echo e(url('imagem/arquivo/'.$funcionario->foto)); ?>" alt="" /></td>
+    <td><?php echo e($funcionario->sobrenome); ?></td>
+    <td><?php echo e($funcionario->nome); ?></td>
+    <td><?php echo e($funcionario->matricula); ?></td>
+    <td><button class="btn btn-success"><a href="/gestao/funcionario-info/<?php echo e($funcionario->id); ?>">Ver</a></button></td>
+</tr>
+<?php endforeach; ?>
 </table>
 
 
-<?php echo $funcionarios->render();?>
+<?php echo $funcionarios->render(); ?>
 <?php $__env->stopSection(); ?>
 
 

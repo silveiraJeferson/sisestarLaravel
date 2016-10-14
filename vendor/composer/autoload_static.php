@@ -283,10 +283,14 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
     );
 
     public static $classMap = array (
-        'CreateCargosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_185711_create_cargos_table.php',
+        'CargosSeeder' => __DIR__ . '/../..' . '/database/seeds/CargosSeeder.php',
+        'CreateCargosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_005500_create_cargos_table.php',
         'CreateFuncionariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_184022_create_funcionarios_table.php',
+        'CreateIrregularidadesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_001904_create_irregularidades_table.php',
         'CreateLoginsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_185809_create_logins_table.php',
+        'CreateNotificacaosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_20_171616_create_notificacaos_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateStatusNotificacaosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_225040_create_status_notificacaos_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -362,6 +366,8 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+        'IrregularidadesSeeder' => __DIR__ . '/../..' . '/database/seeds/IrregularidadesSeeder.php',
+        'NotificacaoSeeder' => __DIR__ . '/../..' . '/database/seeds/NotificacaoSeeder.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -794,6 +800,7 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
+        'Status_notificacaosSeeder' => __DIR__ . '/../..' . '/database/seeds/Status_notificacaosSeeder.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
     );

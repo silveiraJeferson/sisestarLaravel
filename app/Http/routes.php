@@ -14,6 +14,7 @@
 //Route::get('/', function () {
 //    return view('layouts.index');
 //});
+
 Route::controller('/notificacao','NotificacaoController');
 Route::controller('/regularizacao', 'RegularizacaoController');
 Route::controller('/gestao', 'GestaoController');

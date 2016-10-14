@@ -47,11 +47,15 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-        'public' => [
+        'publico' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => public_path('app/public'),
             'visibility' => 'public',
         ],
+//        'storage' => [
+//            'driver' => 'local',
+//            'root' => public_path('app/')
+//        ],
 
         'ftp' => [
             'driver'   => 'ftp',

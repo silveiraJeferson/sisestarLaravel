@@ -23,7 +23,11 @@ class PainelController extends Controller
     public function getLogin(){
         return view('public.login');
     }
-    
+    public function getLoginmovel(){
+        return view('public.loginmovel');
+    }
+
+
     
     
     /**

@@ -17,66 +17,20 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
     <body>
-        <div class="container">
-            <div id="superior-bar" class="blueSisestar">
-                <a href="{{url('/')}}"><span id="sisestarTituloSite">SisEstaR</span></a>
-                <!----------------------------------------------------------------------botão notificação----------------------------------->
 
-                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                        Notificações <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url('/notificacao/data')}}">Listar Notificações por Data</a></li>
-                        <li><a href="{{url('/notificacao/agente')}}">Listar Notificações por Agente</a></li>
-                        <li><a href="{{url('/notificacao/placa')}}">Listar Notificações por Placa</a></li>
-                        <li><a href="{{url('/notificacao/codigo')}}">Listar Notificações por Código</a></li>
-                        <li><a href="{{url('/notificacao/setor')}}">Listar Notificações por Setor</a></li>
-                        <li><a href="{{url('/notificacao/local')}}">Listar Notificações por Local</a></li>
-                    </ul>
-                </button>
-                <!----------------------------------------------------------------------botão regularização----------------------------------->
-                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                        Regularização <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url('/notificacao/placa')}}">Buscar por Placa</a></li>
-                        <li><a href="{{url('/notificacao/codigo')}}">Buscar por Código</a></li>
+        <div id="superior-bar" class="blueSisestar">
+            <a href="{{url('/')}}"><span id="sisestarTituloSite">SisEstaR</span></a>
+            <!----------------------------------------------------------------------botão notificação----------------------------------->
 
-                    </ul>
-                </button>
-                <!----------------------------------------------------------------------botões para gestão de funcionários----------------------------------->
-
-                <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                        Gestão Funcionários <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url('/gestao/funcionarios')}}">Listar Funcionários</a></li>
-                        <li><a href="{{url('/gestao/buscar')}}">Buscar Funcionários</a></li>
-                        <li><a href="{{url('/gestao/cadastrar')}}">Adicionar Funcionários</a></li>                   
-                    </ul>
-                </button>             
-
-
-
-
-                <button id="btnLogin" class="btn btn-default btnSuperiorBar">
-                    <a href="{{url('/login')}}">Login</a>
-                </button>
-
-            </div>
-
-            <!----------------------------------------------------------------------botões para dispositivos pequenos----------------------------------->
-
-            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a href="{{url('/notificacao/todas')}}">Listar todas asNotificações</a></li>
                     <li><a href="{{url('/notificacao/data')}}">Listar Notificações por Data</a></li>
                     <li><a href="{{url('/notificacao/agente')}}">Listar Notificações por Agente</a></li>
                     <li><a href="{{url('/notificacao/placa')}}">Listar Notificações por Placa</a></li>
@@ -85,17 +39,20 @@
                     <li><a href="{{url('/notificacao/local')}}">Listar Notificações por Local</a></li>
                 </ul>
             </button>
-
-            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <!----------------------------------------------------------------------botão regularização----------------------------------->
+            <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                    Notificações <span class="caret"></span>
+                    Regularização <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{url('/notificacao/placa')}}">Buscar por Placa</a></li>
                     <li><a href="{{url('/notificacao/codigo')}}">Buscar por Código</a></li>
+
                 </ul>
             </button>
-            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <!----------------------------------------------------------------------botões para gestão de funcionários----------------------------------->
+
+            <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Gestão Funcionários <span class="caret"></span>
                 </a>
@@ -104,11 +61,59 @@
                     <li><a href="{{url('/gestao/buscar')}}">Buscar Funcionários</a></li>
                     <li><a href="{{url('/gestao/cadastrar')}}">Adicionar Funcionários</a></li>                   
                 </ul>
-            </button> 
+            </button>             
 
 
 
-            
+
+            <button id="btnLogin" class="btn btn-default btnSuperiorBar hidden-xs">
+                <a href="{{url('/login')}}">Login</a>
+            </button>
+            <button id="btnLogin" class="btn btn-default btnSuperiorBar visible-xs">
+                <a href="{{url('/loginmovel')}}">Login</a>
+            </button>
+
+        </div>
+
+        <!----------------------------------------------------------------------botões para dispositivos pequenos----------------------------------->
+
+        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                Notificações <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{url('/notificacao/data')}}">Listar Notificações por Data</a></li>
+                <li><a href="{{url('/notificacao/agente')}}">Listar Notificações por Agente</a></li>
+                <li><a href="{{url('/notificacao/placa')}}">Listar Notificações por Placa</a></li>
+                <li><a href="{{url('/notificacao/codigo')}}">Listar Notificações por Código</a></li>
+                <li><a href="{{url('/notificacao/setor')}}">Listar Notificações por Setor</a></li>
+                <li><a href="{{url('/notificacao/local')}}">Listar Notificações por Local</a></li>
+            </ul>
+        </button>
+
+        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                Notificações <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{url('/notificacao/placa')}}">Buscar por Placa</a></li>
+                <li><a href="{{url('/notificacao/codigo')}}">Buscar por Código</a></li>
+            </ul>
+        </button>
+        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                Gestão Funcionários <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{url('/gestao/funcionarios')}}">Listar Funcionários</a></li>
+                <li><a href="{{url('/gestao/buscar')}}">Buscar Funcionários</a></li>
+                <li><a href="{{url('/gestao/cadastrar')}}">Adicionar Funcionários</a></li>                   
+            </ul>
+        </button> 
+        <div class="container">
+
+
+
 
             @yield('content')
 
@@ -117,21 +122,12 @@
 
 
 
+            <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 
 
-
-
-
-
-
-
-
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
         </div>
     </body>
 </html>

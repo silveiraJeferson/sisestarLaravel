@@ -14,9 +14,11 @@ class FuncionariosSeeder extends Seeder {
     public function run() {
         DB::table('funcionarios')->truncate();
         $faker = Faker::create();
-        foreach (range(1, 20) as $i){
-            $foto = "$i.jpg";
+        foreach (range(1, 200) as $i){
+            $a = rand(1, 20);
+            $foto = "$a.jpg";
             Funcionario::create([
+                'cargo' => rand(1, 3),
                 'nome' => $faker->name,
                 'sobrenome' => $faker->lastName,
                 'cpf' => $faker->numberBetween($min = 000000000000, $max = 99999999999),

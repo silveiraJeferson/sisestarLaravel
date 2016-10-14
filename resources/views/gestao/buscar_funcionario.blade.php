@@ -5,9 +5,9 @@
 
 
 
-<form>
-    <input type="text" class="form-control center-block" id="filtroBusca" placeholder="Matrícula ou Nome..." aria-describedby="inputSuccess4Status">
-
+<form action="/gestao/funcionarios" method="post">
+    <input type="text" name="param"class="form-control center-block" id="filtroBusca" placeholder="Matrícula ou Nome..." aria-describedby="inputSuccess4Status">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <br/>
     <button type="submit" class="btn btn-success center-block">Buscar</button>
 </form>
