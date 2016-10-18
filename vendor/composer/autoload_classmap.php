@@ -90,6 +90,7 @@ return array(
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'IrregularidadesSeeder' => $baseDir . '/database/seeds/IrregularidadesSeeder.php',
+    'LoginSeeder' => $baseDir . '/database/seeds/LoginSeeder.php',
     'NotificacaoSeeder' => $baseDir . '/database/seeds/NotificacaoSeeder.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',

@@ -1,0 +1,69 @@
+<?php $__env->startSection('content'); ?>
+<div class="h1 bg-danger"><?php echo e($status); ?></div>
+<br/>
+<?php foreach($consulta as $notificacao): ?>
+<div id="filtro" class="jumbotron "><h2>Placa</h2><h1><?php echo e($notificacao->placa); ?></h1></div>
+<div class="hidden-xs ver_notificacao">
+    <br/><br/><br/>
+    <p class="verNotif">Número da Notificação: <span class="dadosNotificacao"><?php echo e($notificacao->num_notificacao); ?></span></p>
+    <br/>
+    <p>Marca / Modelo: <span class="dadosNotificacao"><?php echo e($notificacao->marca); ?> / <?php echo e($notificacao->modelo); ?></span></p>
+    <br/>
+    <p>Data: <span class="dadosNotificacao"><?php echo e($notificacao->data); ?></span> Hora: <span class="dadosNotificacao"><?php echo e($notificacao->hora); ?></span></p>
+    <br/>
+    <br/>
+    <p>Local: <span class="dadosNotificacao"><?php echo e($notificacao->local); ?></span></p>
+    <p>Motivo da notificação: <span class="dadosNotificacao"><?php echo e($notificacao->observacao); ?></span></p>
+    <p>
+        Data limite para regularização: <span class="dadosNotificacao"><?php echo e($notificacao->data_lim_regularizacao); ?></span>
+        Valor AMTT: <span class="dadosNotificacao">R$ <?php echo e($notificacao->valor_amtt); ?>,00</span>
+        Valor Detran: <span class="dadosNotificacao">R$ <?php echo e($notificacao->valor_detran); ?>,00</span>
+    </p>
+
+</div>
+
+
+
+<a href="/notificacao/regularizar/<?php echo e($notificacao->id); ?>" class="btn btn-success">Regularizar</a>
+
+
+
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Excluir</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <span class="h3 text-center center-block">Excluir notificação?</span>
+            <div class="center-block text-center">
+                <a href="/notificacao/delete/<?php echo e($notificacao->id); ?>" style="margin-left: 20%;" type="submit" value="Sim" class="btn btn-primary">Sim</a>        
+                <button style="float: right; margin-right: 20%;" type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br/>
+
+
+
+
+
+
+
+<!-- esta div sera exibida apenas em dispositivos com telas pequenas -->
+<div class="visible-xs">
+    <p >Número da Notificação: <span class="dadosNotificacao"><?php echo e($notificacao->num_notificacao); ?></span></p>
+    <p >Placa: <span class="dadosNotificacao"><?php echo e($notificacao->placa); ?></span></p>
+</div>
+
+
+
+<?php endforeach; ?>
+
+
+<!--<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

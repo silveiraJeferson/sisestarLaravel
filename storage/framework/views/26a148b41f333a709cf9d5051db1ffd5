@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
 <?php foreach($consulta as $funcionario): ?>
+<div><a href="/autenticar/login/<?php echo e($funcionario->id); ?>">Informações login</a></div>
 <img id="imgPerfil"class="thumb thumbnail"src="<?php echo e(url('/imagem/arquivo/'.$funcionario->foto)); ?>"/>
 <div id="matriculaPerfil" class="text-center"><?php echo e($funcionario->matricula); ?></div>
 <h1><?php echo e($funcionario->sobrenome); ?></h1>

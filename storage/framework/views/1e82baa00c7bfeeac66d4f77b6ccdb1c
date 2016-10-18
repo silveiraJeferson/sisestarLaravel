@@ -1,0 +1,31 @@
+<?php $__env->startSection('content'); ?>
+<p>Cadastro Funcionario</p>
+
+<?php echo Form::open(['url' => '/gestao/cadastrar','method'=>'POST', 'files'=>true]); ?>
+
+<p>Cargo:   
+    <br/>
+    <?php foreach($cargos as $cargo): ?>
+    <input type="radio" checked="checked" name="cargo" value="<?php echo e($cargo->id); ?>"/>   <?php echo e($cargo->nome); ?>
+
+    <?php endforeach; ?>
+</p> 
+<p><?php echo Form::text('nome','',array('placeholder' => 'Nome')); ?></p>
+<p><?php echo Form::text('sobrenome','',array('placeholder' => 'Sobrenomeome')); ?></p>
+<p><?php echo Form::number('cpf','',array('placeholder' => 'CPF')); ?></p>
+<p><?php echo Form::number('matricula','',array('placeholder' => 'Matricula')); ?></p>
+<p><?php echo Form::date('data_nasc','',array('placeholder' => 'Data de Nascimento')); ?></p>
+<p><?php echo Form::file('arquivo'); ?></p>
+<p><?php echo Form::submit('Enviar'); ?></p>
+<?php echo Form::hidden('foto'); ?>
+
+
+
+
+
+
+
+<?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -18,7 +18,7 @@
 Route::controller('/notificacao','NotificacaoController');
 Route::controller('/regularizacao', 'RegularizacaoController');
 Route::controller('/gestao', 'GestaoController');
-
+Route::controller('/autenticar', 'LoginController');
 
 //Route::controller('/imagem','ImagemController');
 

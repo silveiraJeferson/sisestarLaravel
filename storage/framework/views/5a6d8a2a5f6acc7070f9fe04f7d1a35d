@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+<table class="table table-hover">
+    <tr>
+        <th>Data</th>
+        <th>Placa</th>
+        <th class="hidden-xs">Local</th>
+        <th>Notificação Nº</th>
+        <th>#</th>
+        
+    </tr>
+    <?php foreach($consulta as $notificacao): ?>
+    <tr>
+        <td><?php echo e(date("d/m/Y", strtotime($notificacao->data))); ?></td>
+        <td><?php echo e($notificacao->placa); ?></td>
+        <td class="hidden-xs"><?php echo e($notificacao->local); ?></td>
+        <td><?php echo e($notificacao->num_notificacao); ?></td>       
+        <td><a class="btn btn-success btnVerNotificacao" href="/notificacao/ver/<?php echo e($notificacao->id); ?>">Ver</a></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+<?php echo $consulta->render() ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

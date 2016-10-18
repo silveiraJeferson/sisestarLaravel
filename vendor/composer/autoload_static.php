@@ -367,6 +367,7 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
         'IrregularidadesSeeder' => __DIR__ . '/../..' . '/database/seeds/IrregularidadesSeeder.php',
+        'LoginSeeder' => __DIR__ . '/../..' . '/database/seeds/LoginSeeder.php',
         'NotificacaoSeeder' => __DIR__ . '/../..' . '/database/seeds/NotificacaoSeeder.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',

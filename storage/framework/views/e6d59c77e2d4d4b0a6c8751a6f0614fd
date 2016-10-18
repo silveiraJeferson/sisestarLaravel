@@ -1,0 +1,12 @@
+<?php $__env->startSection('content'); ?>
+<h1>Pagina de regularização </h1>
+O objeto já está aqui, é só tratar
+<?php foreach($notificacao as $att): ?>
+<h2>Placa:
+<?php echo e($att->placa); ?>
+
+</h2>
+<?php endforeach; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
