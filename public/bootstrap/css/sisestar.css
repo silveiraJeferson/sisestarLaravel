@@ -15,9 +15,38 @@ body{
     background-position: center;
 
 }
+.funcionariosLogados{
+    float: right;
+    width: 15%;   
+}
+.dinamica{
+    width: 70%;
+    display: block;
+    
+}
+.imgLogo{
+    width: 20px;
+    height: 20px;
+}
 
-
+#imgFuncLogado{
+    width: 30px;
+    height: 30px;
+}
+#btnTelaPequena{
+    font-size: 10px;
+    position: fixed;
+    left: 30%;
+    top: 5px;
+}
+#addLogin{
+   margin-right: 5px;
+}
 #superior-bar{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
     padding: 5px;    
     color: white;
     display: block;
@@ -41,21 +70,29 @@ body{
 #btnSuperiorBar{
     padding: 1px;
     color: black;   
+    
 }
 .btnSuperiorBar a{
     text-decoration: none;
+    margin: 0 15px 0 15px ;
 }
 
 
 #btnLogin{
     float: right;
     padding: 1px;
+    
 }
 
 #filtroBusca{
     margin-top: 20%;
     width: 300px;
+    
 }
+.formBusca{
+    float: right;
+}
+
 #pIdLogin{
     padding: 5px;
 }
@@ -131,4 +168,25 @@ body{
 .btnVerNotificacao{
     padding: 0 5px 0 5px;
 }
-
+#imgPerfil{
+    width: 20%;
+    height: 20%;
+    float: right;
+}
+#btnNavPerfil{
+    padding:  1px 7px 1px 7px;
+    margin: 3px;
+    float: right;
+}
+#busca{
+   margin-left: 20%;
+    
+}
+#ultimasNotificacoes{    
+    width: 30%;    
+    float: right;
+}
+#ultimasNotificacoesMovel{    
+    width: 90%;    
+    
+}

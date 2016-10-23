@@ -1,10 +1,93 @@
 <?php $__env->startSection('content'); ?>
 <?php foreach($consulta as $funcionario): ?>
-<div><a href="/autenticar/login/<?php echo e($funcionario->id); ?>">Informações login</a></div>
-<img id="imgPerfil"class="thumb thumbnail"src="<?php echo e(url('/imagem/arquivo/'.$funcionario->foto)); ?>"/>
-<div id="matriculaPerfil" class="text-center"><?php echo e($funcionario->matricula); ?></div>
-<h1><?php echo e($funcionario->sobrenome); ?></h1>
-<h2><?php echo e($funcionario->nome); ?></h2>
+
+<?php
+//--------------------------------------calcular idade-----------------------
+$data = $funcionario->data_nasc;
+list($dia, $mes, $ano) = explode('/', $data);
+// Descobre que dia é hoje e retorna a unix timestamp
+$hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+// Descobre a unix timestamp da data de nascimento do CPFfulano
+$nascimento = mktime(0, 0, 0, $mes, $dia, $ano);
+// Depois apenas fazemos o cálculo já citado :)
+$idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+
+//background da info do cargo
+?>
+<div class=" bg-info">
+    <?php if(!$login): ?>
+    <button style="margin-left:  80%" type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-lg">Criar acesso ao Sistema</button>
+
+    <?php endif; ?>
+
+</div>
+<div id="imgPerfil" class="thumbnail">   
+    <img class="thumb thumbnail"src="<?php echo e(url('/imagem/arquivo/'.$funcionario->foto)); ?>"/>
+
+    <a class="center-block text-center btn-primary" href="#">Editar foto</a>
+    <a  class="center-block text-center btn-default" href="#">Alterar Senha</a>   
+    <!--    implementar um modal para alteração de imagem de perfil-->    
+</div>
+<h1 class="text-capitalize"><?php echo e($funcionario->nome); ?></h1>
+<h2 class="bg-success">Cargo: <?php echo e($funcionario->cargo); ?></h2>
+
+<table class="table">
+    <tr>
+        <th>Nome Completo:</th><td class="h3 text-capitalize"><?php echo e($funcionario->nome ." ". $funcionario->sobrenome); ?></td>        
+    </tr>
+    <tr>
+        <th>CPF:</th><td class="h3"><?php echo e($funcionario->cpf); ?></td>
+    </tr>
+    <tr>
+        <th>Matricula:</th><td class="h3"><?php echo e($funcionario->matricula); ?></td>
+    </tr>
+    <tr>
+        <th>Idade:</th><td class="h3"><?php echo e($idade); ?> anos</td>
+    </tr>
+    <tr>
+        <th>Data de Nascimento:</th><td class="h3"><?php echo e($funcionario->data_nasc); ?></td>
+    </tr>
+</table>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <h4 class="text-center">Novo Usuario do Sistema</h4>
+             
+            <form class="form-horizontal" method="post" action="<?php echo e(url('autenticar/store')); ?>">
+                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                <input type="hidden" name="id_func" value="<?php echo e($funcionario->id); ?>">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Login</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="login" value="<?php echo e($funcionario->cpf); ?>"class="form-control" id="inputEmail3" placeholder="Login">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="senha" value="<?php echo e($funcionario->cpf); ?>" class="form-control" id="inputPassword3" placeholder="Senha">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Repita a Senha</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="senha2" value="<?php echo e($funcionario->cpf); ?>" class="form-control" id="inputPassword3" placeholder="Repita a Senha">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Cadastrar</button>
+                        <button  class="btn btn-danger">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <?php endforeach; ?>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

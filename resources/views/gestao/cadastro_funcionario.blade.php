@@ -6,7 +6,7 @@
 <p>Cargo:   
     <br/>
     @foreach($cargos as $cargo)
-    <input type="radio" checked="checked" name="cargo" value="{{$cargo->id}}"/>   {{$cargo->nome}}
+    <input type="radio" checked="checked" name="id_cargo" value="{{$cargo->id}}"/>   {{$cargo->cargo}}
     @endforeach
 </p> 
 <p>{!! Form::text('nome','',array('placeholder' => 'Nome')) !!}</p>

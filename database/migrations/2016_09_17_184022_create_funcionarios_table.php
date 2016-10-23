@@ -14,13 +14,13 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function($table){
            $table->increments('id') ;
-           $table->integer('cargo');
+           $table->integer('id_cargo');
            $table->string('nome', 50);
            $table->string('sobrenome', 50);
            $table->string('cpf', 11);
            $table->string('foto', 50);           
            $table->string('matricula', 20);
-           $table->date('data_nasc');           
+           $table->string('data_nasc');           
            $table->timestamps();
            
         });
@@ -33,6 +33,8 @@ class CreateFuncionariosTable extends Migration
      */
     public function down()
     {
+       
+       
         Schema::drop('funcionarios');
     }
 }

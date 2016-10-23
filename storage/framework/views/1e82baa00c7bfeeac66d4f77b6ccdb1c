@@ -6,7 +6,7 @@
 <p>Cargo:   
     <br/>
     <?php foreach($cargos as $cargo): ?>
-    <input type="radio" checked="checked" name="cargo" value="<?php echo e($cargo->id); ?>"/>   <?php echo e($cargo->nome); ?>
+    <input type="radio" checked="checked" name="id_cargo" value="<?php echo e($cargo->id); ?>"/>   <?php echo e($cargo->cargo); ?>
 
     <?php endforeach; ?>
 </p> 

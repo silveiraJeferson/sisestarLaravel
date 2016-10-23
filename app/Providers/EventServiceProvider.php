@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'sisestar\Events\SomeEvent' => [
-            'sisestar\Listeners\EventListener',
+        'sisestar\Events\NotificacaoFoiCadastrada' => [
+            'sisestar\Handlers\Events\AtualizaListagemNotificacoes',
         ],
     ];
 

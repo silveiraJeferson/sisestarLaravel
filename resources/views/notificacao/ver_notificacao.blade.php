@@ -3,7 +3,7 @@
 <div class="h1 bg-danger">{{$status}}</div>
 <br/>
 @foreach($consulta as $notificacao)
-<div id="filtro" class="jumbotron "><h2>Placa</h2><h1>{{$notificacao->placa}}</h1></div>
+<div id="filtro" class="jumbotron "><h2>Placa</h2><h1 class="text-uppercase">{{$notificacao->placa}}</h1></div>
 <div class="hidden-xs ver_notificacao">
     <br/><br/><br/>
     <p class="verNotif">Número da Notificação: <span class="dadosNotificacao">{{$notificacao->num_notificacao}}</span></p>

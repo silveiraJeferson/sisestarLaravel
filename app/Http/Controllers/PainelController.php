@@ -3,40 +3,37 @@
 namespace sisestar\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use sisestar\Http\Requests;
 use sisestar\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
+class PainelController extends Controller {
 
-class PainelController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
-    {
-        return view('layout.master');
+    public function getIndex() {
+        $logados = DB::table('funcionarios_logados')->get();
+        
+        return view('layout.master',  compact('logados'));
     }
-    
-    public function getLogin(){
+
+    public function getLogin() {
         return view('public.login');
     }
-    public function getLoginmovel(){
+
+    public function getLoginmovel() {
         return view('public.loginmovel');
     }
 
-
-    
-    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -46,8 +43,7 @@ class PainelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -57,8 +53,7 @@ class PainelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -68,8 +63,7 @@ class PainelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -80,8 +74,7 @@ class PainelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -91,8 +84,8 @@ class PainelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

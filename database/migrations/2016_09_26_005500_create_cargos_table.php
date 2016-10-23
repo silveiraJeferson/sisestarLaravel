@@ -13,7 +13,7 @@ class CreateCargosTable extends Migration {
     public function up() {
         Schema::create('cargos', function($table) {
             $table->increments('id');            
-            $table->string('nome');
+            $table->string('cargo');
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 <div class="h1 bg-danger"><?php echo e($status); ?></div>
 <br/>
 <?php foreach($consulta as $notificacao): ?>
-<div id="filtro" class="jumbotron "><h2>Placa</h2><h1><?php echo e($notificacao->placa); ?></h1></div>
+<div id="filtro" class="jumbotron "><h2>Placa</h2><h1 class="text-uppercase"><?php echo e($notificacao->placa); ?></h1></div>
 <div class="hidden-xs ver_notificacao">
     <br/><br/><br/>
     <p class="verNotif">Número da Notificação: <span class="dadosNotificacao"><?php echo e($notificacao->num_notificacao); ?></span></p>

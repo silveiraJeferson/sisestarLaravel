@@ -8,6 +8,7 @@ use sisestar\Http\Requests;
 use sisestar\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use sisestar\Notificacao;
+use sisestar\Events\NotificacaoFoiCadastrada;
 
 class NotificacaoController extends Controller
 {
@@ -22,7 +23,8 @@ class NotificacaoController extends Controller
     }
     
     public function getData(){
-        return view('notificacao.lista_por_data');
+        $lista = Notificacao::where('data',date("d/m/Y"))->orderBy('hora','desc')->paginate(15);
+        return view('notificacao.lista_por_data', compact('lista'));
     }
     public function getAgente(){
         return view('notificacao.lista_por_agente');
@@ -39,10 +41,17 @@ class NotificacaoController extends Controller
     public function getLocal() {
         return view('notificacao.lista_por_local');
     }
+    
+    //-------------------------------listar todas as notificações------------------
     public function getTodas(){
-        $consulta = DB::table('notificacaos')->orderBy('data')->orderBy('hora','desc')->where('status',1)->paginate(20);
+        $consulta = DB::table('notificacaos')->orderBy('data','desc')->orderBy('hora','desc')->where('status',1)->paginate(15);
         return view('notificacao.todas',  compact('consulta'));
     }
+    
+    
+    
+    
+    //---------------------------------ver detalhes da notificação------------------------------
     public function getVer($id){
         $consulta = DB::table('notificacaos')->where('id',$id)->get();       
         foreach($consulta as $item){
@@ -54,10 +63,18 @@ class NotificacaoController extends Controller
         }         
         return view('notificacao.ver_notificacao',  compact('consulta','status'));
     }
+    
+    
+    
+    //-----------------------------------chamado da view para notificar um veiculo---------------------------------------
     public function getNotificar(){
         $irregularidades = DB::table('irregularidades')->get();
         return view('notificacao.notificar',  compact('irregularidades'));
     }
+    
+    
+//-----------------------------------chamado da view para regularização de um veiculo---------------------------------------
+
     public function getRegularizar($id){
         $notificacao = DB::table('notificacaos')->where('id',$id)->get();
         foreach($notificacao as $item){
@@ -66,6 +83,9 @@ class NotificacaoController extends Controller
         $status = DB::table('status_notificacaos')->where('id', $id_status);
         return view('notificacao.regularizacao',  compact('notificacao','status'));
     }
+    
+//-----------------------------------chamado da view para deletar uma notificação---------------------------------------
+
     public function getDelete($id){
         DB::table('notificacaos')->delete($id);
     }
@@ -74,10 +94,20 @@ class NotificacaoController extends Controller
 
     //------------------------------------------metodos posts -------------------------
     
+    
+    //------------------------------------------------notificando um veiculo--------------------------
     public function postNotificar(Request $request){
+       
         $dadosDoFormulario = $request->all();
         $notificacao = new Notificacao($dadosDoFormulario);
         $notificacao->save();
+        //nesse ponto gerar arquivo txt para impressão
+        $id = DB::table('notificacaos')->max('id');
+        $consulta = DB::table('notificacaos')->where('id',$id)->get();
+        $sql = DB::table('status_notificacaos')->where('id',$request->status)->get();
+        $status = $sql[0]->nome;
+        //$res = \Event::fire(new NotificacaoFoiCadastrada());        
+       return view('notificacao.ver_notificacao',compact('consulta','status'));
     }
 
     

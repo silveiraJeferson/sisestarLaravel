@@ -13,13 +13,13 @@ class CargosSeeder extends Seeder
     {
         DB::table('cargos')->truncate();
         Cargo::create([            
-            'nome' => 'Agente de trânsito'
+            'cargo' => 'Agente de trânsito'
         ]);
         Cargo::create([            
-            'nome' => 'Administrativo'
+            'cargo' => 'Administrativo'
         ]);
         Cargo::create([            
-            'nome' => 'Master'
+            'cargo' => 'Master'
         ]);
     }
 }

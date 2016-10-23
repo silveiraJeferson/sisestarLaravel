@@ -1,14 +1,20 @@
 @extends('layout.master')
 @section('content')
-<table class="table table-responsive table-striped">
+<table class="table table-responsive table-striped table-hover">
     <h1>Listagem dos funcionarios</h1>
     <tr>
 
-    <p>
+    <p class="bg-info">{{$info}}<span class="text-danger h5">{!! $funcionarios->total() !!}</span></p>    
+
+
+
+
+    <p class="formBusca">
         {!! Form::open(['url' => '/gestao/funcionarios']) !!}
         {!! Form::text('param','',array('placeholder' => 'Pesquisar Funcionário')) !!}
         {!! Form::submit('Buscar',array('class' => 'btn-primary'))!!}
         {!! Form::close() !!}
+
     </p>
 </tr>
 <tr>
@@ -27,17 +33,23 @@
 </tr>
 @foreach($funcionarios as $funcionario)
 <tr>
-    <td><img class="img-circle" style="width: 30px; height: 30px;"src="{{url('imagem/arquivo/'.$funcionario->foto)}}" alt="" /></td>
-    <td>{{$funcionario->sobrenome}}</td>
+    <td><a href="/gestao/funcionario-info/{{$funcionario->id}}">
+            <img class="img-circle" style="width: 20px; height: 20px;"src="{{url('imagem/arquivo/'.$funcionario->foto)}}" alt="" /></a>
+    </td>
+    <td class="text-uppercase">{{$funcionario->sobrenome}}</td>
     <td>{{$funcionario->nome}}</td>
     <td>{{$funcionario->matricula}}</td>
-    <td><button class="btn btn-success"><a href="/gestao/funcionario-info/{{$funcionario->id}}">Ver</a></button></td>
+    <td><a class="glyphicon glyphicon-eye-open" href="/gestao/funcionario-info/{{$funcionario->id}}"></a></td>
+      
 </tr>
 @endforeach
 </table>
 
 
-<?php echo $funcionarios->render(); ?>
+<div class="center-block text-center">
+    {!! $funcionarios->render() !!}
+</div>
+
 @endsection
 
 

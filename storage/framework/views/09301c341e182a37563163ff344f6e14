@@ -1,4 +1,11 @@
+<?php
+
+use Illuminate\Support\Facades\DB;
+
+$logados = DB::table('funcionarios_logados')->orderBy('nome')->paginate(13);
+?>
 <!DOCTYPE html>
+
 <html lang="pt">
     <head>
         <meta charset="utf-8">
@@ -22,11 +29,13 @@
     <body>
 
         <div id="superior-bar" class="blueSisestar">
-            <a href="<?php echo e(url('/')); ?>"><span id="sisestarTituloSite">SisEstaR</span></a>
+            <a href="<?php echo e(url('/')); ?>"><img class="imgLogo"src="<?php echo e(url('/imagem/arquivo/icon-estacionamento-infra_2.png')); ?>"/>
+                <span id="sisestarTituloSite">SisEstaR</span>
+            </a>
             <!----------------------------------------------------------------------botão notificação----------------------------------->
 
             <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle glyphicon glyphicon-copy" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Notificações <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -41,7 +50,7 @@
             </button>
             <!----------------------------------------------------------------------botão regularização----------------------------------->
             <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle glyphicon glyphicon-ok-sign" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Regularização <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -52,8 +61,8 @@
             </button>
             <!----------------------------------------------------------------------botões para gestão de funcionários----------------------------------->
 
-            <button id="btnSuperiorBar" class="btn btn-default dropdown hidden-xs btnSuperiorBar">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+            <button id="btnSuperiorBar" class="btn btn-warning dropdown hidden-xs btnSuperiorBar">
+                <a class="dropdown-toggle glyphicon glyphicon-list-alt" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
                     Gestão Funcionários <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
@@ -67,67 +76,86 @@
 
 
             <button id="btnLogin" class="btn btn-default btnSuperiorBar hidden-xs">
-                <a href="<?php echo e(url('/login')); ?>">Login</a>
+                <a class="glyphicon glyphicon-user" href="<?php echo e(url('/login')); ?>">Login</a>
             </button>
             <button id="btnLogin" class="btn btn-default btnSuperiorBar visible-xs">
-                <a href="<?php echo e(url('/loginmovel')); ?>">Login</a>
+                <a class="glyphicon glyphicon-user" href="<?php echo e(url('/loginmovel')); ?>"></a>
             </button>
 
         </div>
 
         <!----------------------------------------------------------------------botões para dispositivos pequenos----------------------------------->
+        <div id="btnTelaPequena"class=" center-block text-center">
+            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+                <a class="dropdown-toggle glyphicon glyphicon-copy" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                     <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo e(url('/notificacao/todas')); ?>">Listar todas asNotificações</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/data')); ?>">Listar Notificações por Data</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/agente')); ?>">Listar Notificações por Agente</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Listar Notificações por Placa</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Listar Notificações por Código</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/setor')); ?>">Listar Notificações por Setor</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/local')); ?>">Listar Notificações por Local</a></li>
+                </ul>
+            </button>
 
-        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                Notificações <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="<?php echo e(url('/notificacao/data')); ?>">Listar Notificações por Data</a></li>
-                <li><a href="<?php echo e(url('/notificacao/agente')); ?>">Listar Notificações por Agente</a></li>
-                <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Listar Notificações por Placa</a></li>
-                <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Listar Notificações por Código</a></li>
-                <li><a href="<?php echo e(url('/notificacao/setor')); ?>">Listar Notificações por Setor</a></li>
-                <li><a href="<?php echo e(url('/notificacao/local')); ?>">Listar Notificações por Local</a></li>
-            </ul>
-        </button>
+            <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
+                <a class="dropdown-toggle glyphicon glyphicon-ok-sign" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                     <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Buscar por Placa</a></li>
+                    <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Buscar por Código</a></li>
+                </ul>
+            </button>
+            <button id="btnSuperiorBar" class="btn btn-warning dropdown visible-xs-inline-block btnSuperiorBar">
+                <a class="dropdown-toggle glyphicon glyphicon-list-alt" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo e(url('/gestao/funcionarios')); ?>">Listar Funcionários</a></li>
+                    <li><a href="<?php echo e(url('/gestao/buscar')); ?>">Buscar Funcionários</a></li>
+                    <li><a href="<?php echo e(url('/gestao/cadastrar')); ?>">Adicionar Funcionários</a></li>                   
+                </ul>
+            </button> 
+        </div>
+        <br/><br/>  
+        <div class="thumbnail funcionariosLogados hidden-xs h6">
+            <?php foreach($logados as $func): ?>
+            <table class="table-condensed bg-default">
+                <tr >
+                    <td style="width: 90%">
+                        <img id="imgFuncLogado" src="<?php echo e(url('/imagem/arquivo/'.$func->foto)); ?>"/> <?php echo e(substr($func->nome, 0, 15)); ?>...
 
-        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                Notificações <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="<?php echo e(url('/notificacao/placa')); ?>">Buscar por Placa</a></li>
-                <li><a href="<?php echo e(url('/notificacao/codigo')); ?>">Buscar por Código</a></li>
-            </ul>
-        </button>
-        <button id="btnSuperiorBar" class="btn btn-default dropdown visible-xs-inline-block btnSuperiorBar">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
-                Gestão Funcionários <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="<?php echo e(url('/gestao/funcionarios')); ?>">Listar Funcionários</a></li>
-                <li><a href="<?php echo e(url('/gestao/buscar')); ?>">Buscar Funcionários</a></li>
-                <li><a href="<?php echo e(url('/gestao/cadastrar')); ?>">Adicionar Funcionários</a></li>                   
-            </ul>
-        </button> 
-        <div class="container">
+                    </td>
+                    <td style="margin-right: 0">
+                        <?php if($func->logado): ?>
+                        <div style="color: #64e554; margin-right: 0; font-size: 25px;">•</div>
+                        <?php else: ?>
+                        <div style="color: #f4ced2; margin-right: 0; font-size: 25px;">•</div>
+                        <?php endif; ?>
+                    </td>
+                </tr>               
+            </table>
+            <?php endforeach; ?>
+            <div style="font-size: 5px">
+                <?php echo $logados->render(); ?> 
 
+            </div>
+
+        </div>
+        <div class="container dinamica">
 
 
 
             <?php echo $__env->yieldContent('content'); ?>
-
-
-
-
-
-
             <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-
-
         </div>
+
+
     </body>
+
 </html>

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('IrregularidadesSeeder');
         $this->call('CargosSeeder');
         $this->call('Status_notificacaosSeeder');
+        $this->call('LogonSeeder');
     }
 
 }

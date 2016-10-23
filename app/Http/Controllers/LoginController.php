@@ -38,8 +38,17 @@ class LoginController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-        //
+    public function postStore(Request $request) {
+        dd($request);
+//        $resp = new MsgResposta();
+//        $dados = $request->all();
+//        if($dados['senha'] != $dados['senha2']){
+//            $id = $dados['id_func'];
+//            $resp->status = false;
+//            $resp->msg = "As senhas não coincidem";
+//            $status = false;
+//            return redirect("gestao/funcionario-info/$id",  compact('resp','status'));
+//        }
     }
 
     /**
@@ -86,18 +95,6 @@ class LoginController extends Controller {
         $func = DB::table('funcionarios')->where('id',$id)->get();
         return view('gestao.cadastro_login',  compact('func'));
     }
-    public function postNovologin(Request $request){
-        $resp = new MsgResposta();
-        if($request->senha == $request->senha2){
-            $resp->status = true;
-            $resp->msg = "Novo usuário cadastrado com sucesso!";
-            $resp->valor = DB::table('funcionarios')->where('id',$id)->get();            
-        }else{
-            $resp->status = false;
-            $resp->msg = "As senhas não coincidem";
-        }
-        
-        return view('gestao.cadastro_login',  compact('resp'));
-    }
+    
 
 }

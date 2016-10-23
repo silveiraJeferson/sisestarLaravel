@@ -8,16 +8,16 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -61,6 +61,7 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\Log\\' => 8,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -186,6 +187,10 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -227,10 +232,6 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
     public static $prefixesPsr0 = array (
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
@@ -285,9 +286,12 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
     public static $classMap = array (
         'CargosSeeder' => __DIR__ . '/../..' . '/database/seeds/CargosSeeder.php',
         'CreateCargosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_005500_create_cargos_table.php',
+        'CreateFuncionarioCargoTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_22_204850_create_funcionarioCargo_table.php',
+        'CreateFuncionariosLogadosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_22_170859_create_funcionariosLogados_table.php',
         'CreateFuncionariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_184022_create_funcionarios_table.php',
         'CreateIrregularidadesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_26_001904_create_irregularidades_table.php',
         'CreateLoginsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_185809_create_logins_table.php',
+        'CreateLogonsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_22_160544_create_logons_table.php',
         'CreateNotificacaosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_20_171616_create_notificacaos_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateStatusNotificacaosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_09_225040_create_status_notificacaos_table.php',
@@ -296,6 +300,7 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'FuncionarioCargoSeeder' => __DIR__ . '/../..' . '/database/seeds/FuncionarioCargoSeeder.php',
         'FuncionariosSeeder' => __DIR__ . '/../..' . '/database/seeds/FuncionariosSeeder.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
@@ -368,6 +373,7 @@ class ComposerStaticInit1ba45ee00bd98816dde20540108f95e1
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
         'IrregularidadesSeeder' => __DIR__ . '/../..' . '/database/seeds/IrregularidadesSeeder.php',
         'LoginSeeder' => __DIR__ . '/../..' . '/database/seeds/LoginSeeder.php',
+        'LogonSeeder' => __DIR__ . '/../..' . '/database/seeds/LogonSeeder.php',
         'NotificacaoSeeder' => __DIR__ . '/../..' . '/database/seeds/NotificacaoSeeder.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
