@@ -20,28 +20,35 @@ class GestaoController extends Controller {
     public function getIndex() {
         return view('gestao.index');
     }
-    
-    
+
     //--------------------------------------listagem de todos os funcionarios----------
     public function getFuncionarios() {
         $funcionarios = DB::table('funcionarios')->orderBy('sobrenome')->paginate(7);
         $info = "Total de funcionários cadastrados: ";
-        return view('gestao.lista_funcionarios', compact('funcionarios','info'));
+        return view('gestao.lista_funcionarios', compact('funcionarios', 'info'));
     }
+
     //---------------------------------------listagem do perfil do funcionário-----------
     public function getFuncionarioInfo($id) {
-        
+
         $consulta = DB::table('funcionarios')
-                ->join('cargos', 'cargos.id', '=', 'funcionarios.id_cargo')
-                ->where('funcionarios.id', $id)->get();
-        $login = DB::table('logons')->where("id_funcionario",$id)->get();
+                        ->join('cargos', 'cargos.id', '=', 'funcionarios.id_cargo')
+                        ->where('funcionarios.id', $id)->get();
+        $login = DB::table('logons')->where("id_funcionario", $id)->get();       
+        $consulta[0]->id = $id;
+        $calcula_idade = new DataController($consulta[0]->data_nasc);
+        $consulta[0]->idade = $calcula_idade->getIdade();
         
-        return view('gestao.info_funcionario', compact('consulta','login'));
+       
+       
+        return view('gestao.info_funcionario', compact('consulta', 'login'));
     }
+
     //---------------------------------------retorno a view de busca de funcionarios
     public function getBuscar() {
         return view('gestao.buscar_funcionario');
     }
+
     //---------------------------------------retorno o input radio de cargos para cadastro de funcionarios
     public function getCadastrar() {
         $cargos = DB::table('cargos')->orderBy('id', 'desc')->get();
@@ -51,17 +58,17 @@ class GestaoController extends Controller {
     //------------------------------------------------rotas methodos post----------
     //-------------------------------------------------cadastro de funcionarios---------------
     public function postCadastrar(Request $request) {
-        
+
         $file = $request->file('arquivo');
         if ($request->hasFile('arquivo') && $file->isValid()) {
-            if ($file->getClientMimeType() == "image/jpeg") {            
-                
-                
-                $dadosFormulario = $request->all(); 
+            if ($file->getClientMimeType() == "image/jpeg") {
+
+
+                $dadosFormulario = $request->all();
                 $dadosFormulario['data_nasc'] = date('d/m/Y', strtotime($dadosFormulario['data_nasc']));
-                $dadosFormulario["foto"] = $dadosFormulario["matricula"].$dadosFormulario["cpf"].".jpg";
-               
-                
+                $dadosFormulario["foto"] = $dadosFormulario["matricula"] . $dadosFormulario["cpf"] . ".jpg";
+
+
                 $cadastro = new Funcionario($dadosFormulario);
                 $file->move('app/public', $dadosFormulario["foto"]);
                 $cadastro->save();
@@ -75,7 +82,7 @@ class GestaoController extends Controller {
     }
 
     public function postFuncionarios(Request $request) {
-        if($request->param == ""){
+        if ($request->param == "") {
             return $this->getFuncionarios();
         }
         $funcionarios = DB::table('funcionarios')->where('nome', 'ilike', "%$request->param%")
@@ -84,7 +91,7 @@ class GestaoController extends Controller {
                 ->orderBy('sobrenome')
                 ->paginate(7);
         $info = "Resultado para a busca ($request->param) : ";
-        return view('gestao.lista_funcionarios', compact('funcionarios','info'));
+        return view('gestao.lista_funcionarios', compact('funcionarios', 'info'));
     }
 
     /**

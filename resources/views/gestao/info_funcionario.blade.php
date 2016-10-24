@@ -4,14 +4,8 @@
 
 <?php
 //--------------------------------------calcular idade-----------------------
-$data = $funcionario->data_nasc;
-list($dia, $mes, $ano) = explode('/', $data);
-// Descobre que dia é hoje e retorna a unix timestamp
-$hoje = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
-// Descobre a unix timestamp da data de nascimento do CPFfulano
-$nascimento = mktime(0, 0, 0, $mes, $dia, $ano);
-// Depois apenas fazemos o cálculo já citado :)
-$idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+
+
 
 //background da info do cargo
 ?>
@@ -43,7 +37,7 @@ $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
         <th>Matricula:</th><td class="h3">{{$funcionario->matricula}}</td>
     </tr>
     <tr>
-        <th>Idade:</th><td class="h3">{{$idade}} anos</td>
+        <th>Idade:</th><td class="h3">{{$funcionario->idade}} anos</td>
     </tr>
     <tr>
         <th>Data de Nascimento:</th><td class="h3">{{$funcionario->data_nasc}}</td>

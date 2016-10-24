@@ -14,10 +14,10 @@ class CreateLoginsTable extends Migration
     {
         Schema::create('logins', function($table){
             $table->increments('id');
+            $table->string('func');
             $table->string('login', 20);
             $table->string('senha', 100);
-            $table->string('token', 50);
-            $table->boolean('auth');
+            
             
             //$table->unsignedInteger('id_funcionario');
             //$table->foreign('id_funcionario')->references('id')->on('funcionarios')->onDelete('cascade');

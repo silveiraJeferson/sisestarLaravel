@@ -7,6 +7,9 @@ use sisestar\Http\Requests;
 use sisestar\Http\Controllers\Controller;
 use sisestar\MsgResposta;
 use Illuminate\Support\Facades\DB;
+use sisestar\Login;
+use sisestar\Events\NovoLogin;
+use sisestar\Logon;
 
 class LoginController extends Controller {
 
@@ -39,16 +42,29 @@ class LoginController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function postStore(Request $request) {
-        dd($request);
-//        $resp = new MsgResposta();
-//        $dados = $request->all();
-//        if($dados['senha'] != $dados['senha2']){
-//            $id = $dados['id_func'];
-//            $resp->status = false;
-//            $resp->msg = "As senhas não coincidem";
-//            $status = false;
-//            return redirect("gestao/funcionario-info/$id",  compact('resp','status'));
-//        }
+        
+        //validar senhas iguais
+        $dadosLogin = $request->all();
+        
+        $senha = sha1($dadosLogin['id_func'].$dadosLogin['senha']);
+        $dadosLogin['senha'] = $senha;
+        $dadosLogin['func'] = $dadosLogin['id_func'];
+        $login = new Login($dadosLogin);
+        $login->save();
+        
+        //-----------------------------adiciono usuario à tabela logon para saber seu status online
+        $logon = new Logon();
+        $logon->id_funcionario = $dadosLogin['id_func'];
+        $logon->logado = false;      
+        $logon->save();
+        $id =  $dadosLogin['id_func'];
+        return redirect("gestao/funcionario-info/$id");
+        
+        
+        
+        
+        
+        
     }
 
     /**
